@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Chloe Neufeld</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleAbstract(id, button) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+                button.textContent = "Less";
+            } else {
+                element.style.display = "none";
+                button.textContent = "More";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/">chloeneufeld@github.io ~ $</a></div>
+        <nav>
+            <ul>
+                <li><a href="/about.html">~/about</a></li>
+                <li><a href="/publications.html">~/publications</a></li>
+                <li><a href="/projects.html">~/projects</a></li>
+                <li><a href="/community.html">~/community</a></li>
+                <li><a href="/cv.html">~/cv</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="publications-section">
+        <h1>Publications</h1>
+
+        <h2>First / Co-First Author Papers</h2>
+        <ul class="publications-list">
+            <li>
+                <p><strong>C. Neufeld</strong> et al. (2022) <i>RELICS: small lensed z ≥ 5.5 galaxies selected as potential Lyman continuum leakers</i></p>
+                <button class="more-btn" onclick="toggleAbstract('abstract1', this)">More</button>
+                <div class="abstract-box" id="abstract1" style="display: none;">
+                    <p><strong>Abstract:</strong> This is a placeholder abstract describing the research findings in detail.</p>
+                    <p><a href="https://ui.adsabs.harvard.edu/abs/example" target="_blank">NASA ADS Link</a></p>
+                </div>
+            </li>
+            
+        </ul>
+
+        <h2>Nth-Author Papers</h2>
+        <ul class="publications-list">
+
+        </ul>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+            <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+            <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+        </p>
+    </footer>
+</body>
+</html>

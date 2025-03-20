@@ -1,11 +1,20 @@
-/* Basic Reset */
+/* Keep the rest of the site in Courier New */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Courier New", Courier, monospace;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #E6E6FA; /* pastel lavender */
+    color: #555555;
+    padding-top: 60px; /* Adjust this based on header height */
+}
+
+/* Apply Times font to headers */
+.header-font {
+    font-family: 'Times';
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 /* Header */
@@ -18,7 +27,9 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    box-sizing: border-box;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allows wrapping if needed */
 }
 
 .logo {
@@ -28,7 +39,7 @@ header {
 
 .logo a {
     text-decoration: none;
-    color: #333;
+    color: #555555;
 }
 
 nav ul {
@@ -36,15 +47,19 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap; /* Allows items to wrap instead of overflowing */
+    justify-content: flex-end; /* Keeps links aligned to the right */
+    gap: 5px; /* Adds space between links */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0;
+    padding: 5px 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #555555;
 }
 
 /* Main Content */
@@ -54,21 +69,22 @@ main {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin-top: 60px; /* Avoid overlap with header */
+    margin-top: 5px; /* Avoid overlap with header */
 }
 
 h1 {
     font-size: 3em;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
 /* Profile Picture */
 .profile-pic img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px; /* Slight rounded corners, but not a circle */
+    width: 300px;
+    height: 300px;
+    border-radius: 0px; /* Slight rounded corners, but not a circle */
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
 /* Footer */
@@ -81,6 +97,64 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #333;
+    color: #555555;
     margin: 0 10px;
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Light overlay for readability */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Publications Page Styles */
+.publications-section {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.publications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.publications-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.more-btn {
+    background: #888;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.more-btn:hover {
+    background: #555;
+}
+
+.abstract-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(230, 230, 250, 0.5); /* Light lavender */
+    border-left: 4px solid #555;
+    display: none;
 }
