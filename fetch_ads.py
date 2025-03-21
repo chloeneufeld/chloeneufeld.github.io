@@ -18,7 +18,7 @@ def get_bibcodes():
     res = requests.get(ADS_API_URL, headers=HEADERS)
     res.raise_for_status()
     print(res.json())
-    return res.json()["library"]["documents"]
+    return res.json()["documents"]
 
 
 def fetch_paper_data(bibcodes):
