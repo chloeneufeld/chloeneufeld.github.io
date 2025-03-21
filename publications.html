@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | Chloe Neufeld</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function toggleAbstract(id, button) {
-            var element = document.getElementById(id);
-            if (element.style.display === "none") {
-                element.style.display = "block";
-                button.textContent = "Less";
-            } else {
-                element.style.display = "none";
-                button.textContent = "More";
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Chloe Neufeld</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function toggleAbstract(id, button) {
+      const element = document.getElementById(id);
+      if (element.style.display === "none") {
+        element.style.display = "block";
+        button.textContent = "Less";
+      } else {
+        element.style.display = "none";
+        button.textContent = "More";
+      }
+    }
+
+    function formatAuthors(authors) {
+      return authors.map(a => a.includes("Neufeld") ? `<strong>${a}</strong>` : a).join(", ");
+    }
+
+    function createPaperHTML(paper, index) {
+      return `
+        <li class="publication-item">
+          <p>${paper.title}</p>
+          <hr>
+          <p><i>${formatAuthors(paper.authors)} (${paper.year})</i></p>
+          <button class="more-btn" onclick="toggleAbstract('abstract${index}', this)">More</button>
+          <div class="abstract-box" id="abstract${index}" style="display: none;">
+            <p><strong>Abstract:</strong> ${paper.abstract}</p>
+            <p><a href="https://ui.adsabs.harvard.edu/abs/${paper.bibcode}" target="_blank">NASA ADS Link</a></p>
+            <a href="https://ui.adsabs.harvard.edu/abs/${paper.bibcode}" class="ads-button" target="_blank">ADS</a>
+          </div>
+        </li>
+      `;
+    }
+
+    async function loadPublications() {
+      const res = await fetch("publications.json");
+      const data = await res.json();
+
+      const firstList = document.getElementById("first-author-list");
+      const nthList = document.getElementById("nth-author-list");
+
+      data.first_author.forEach((paper, i) => {
+        firstList.innerHTML += createPaperHTML(paper, `fa${i}`);
+      });
+
+      data.nth_author.forEach((paper, i) => {
+        nthList.innerHTML += createPaperHTML(paper, `na${i}`);
+      });
+    }
+
+    window.onload = loadPublications;
+  </script>
 </head>
 <body>
-    <header>
-        <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
-        <nav>
-            <ul>
-                <li><a href="/about.html">~/about</a></li>
-                <li><a href="/publications.html">~/publications</a></li>
-                <li><a href="/projects.html">~/projects</a></li>
-                <li><a href="/community.html">~/community</a></li>
-                <li><a href="/cv.html">~/cv</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+    <nav>
+      <ul>
+        <li><a href="/about.html">~/about</a></li>
+        <li><a href="/publications.html">~/publications</a></li>
+        <li><a href="/projects.html">~/projects</a></li>
+        <li><a href="/community.html">~/community</a></li>
+        <li><a href="/cv.html">~/cv</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="publications-section">
-        <h1>Publications</h1>
-        <p><i><a href = "https://ui.adsabs.harvard.edu/public-libraries/JrWTBTT0R_OM1UiDMzSQ7w">full list of publications here</a></i></p>
-        <ul class="publications-list">
+  <main class="publications-section">
+    <h1>Publications</h1>
+    <p><i><a href="https://ui.adsabs.harvard.edu/public-libraries/JrWTBTT0R_OM1UiDMzSQ7w">full list of publications here</a></i></p>
 
-            <li class="publication-item">
-                <p>RELICS: small lensed z ≥ 5.5 galaxies selected as potential Lyman continuum leakers</p>
-                <hr>
-                <p><i><strong>Chloe Neufeld</strong>, Victoria Strait, Marusa Bradac, Brian C. Lemaux, Dan Coe, Lilan Yang, Tommaso Treu, Adi Zitrin, Mario Nonino, Larry Bradley, Keren Sharon</i></p>
-                <button class="more-btn" onclick="toggleAbstract('abstract1', this)">More</button>
-                <div class="abstract-box" id="abstract1" style="display: none;">
-                    <p><strong>Abstract:</strong> We present size measurements of 78 high-redshift (z ≥ 5.5) galaxy candidates from the Reionization Lensing Cluster Survey (RELICS). These distant galaxies are well resolved due to the gravitational lensing power of foreground galaxy clusters, imaged by the Hubble Space Telescope and the Spitzer Space Telescope. We compute sizes using the forward-modelling code LENSTRUCTION and account for magnification using public lens models. The resulting size-magnitude measurements confirm the existence of many small galaxies with effective radii Reff < 200 pc in the early Universe, in agreement with previous studies. In addition, we highlight compact and highly star-forming sources with star formation rate surface densities  ΣSFR>10M⊙yr−1kpc−2  as possible Lyman continuum leaking candidates that could be major contributors to the process of reionization. Future spectroscopic follow-up of these compact galaxies (e.g. with the James Webb Space Telescope) will further clarify their role in reionization and the physics of early star formation.</p>
-                    <p><a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.2162N/abstract" target="_blank">NASA ADS Link</a></p>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.2162N/abstract" class="ads-button" target="_blank">ADS</a>
-                </div>
-            </li>
-                    
-            <li class="publication-item">
-                <p>FRESCO: The Paschen-α Star-forming Sequence at Cosmic Noon</p>
-                <hr>
-                <p><i><strong>Chloe Neufeld</strong>, Pieter van Dokkum, Yasmeen Asali, Alba Covelo-Paz, Joel Leja, Jamie Lin, Jorryt Matthee, Pascal A. Oesch, Naveen A. Reddy, Irene Shivaei, Kate Whitaker, Stijn Wuyts, Gabriel Brammer, Danilo Marchesini, Michael V. Maseda, Rohan P. Naidu, Erica J. Nelson, Anna Velichko, Andrea Weibel, Mengyuan Xiao</i></p>
-                <button class="more-btn" onclick="toggleAbstract('abstract1', this)">More</button>
-                <div class="abstract-box" id="abstract1" style="display: none;">
-                    <p><strong>Abstract:</strong> We present results from the JWST First Reionization Epoch Spectroscopically Complete Observations survey on the star-forming sequence (SFS) of galaxies at 1.0 < z < 1.7, around the peak of the cosmic star formation history. Star formation rates (SFRs) are measured from the redshifted, relatively dust-insensitive Paschen-α emission line, and stellar mass measurements include the F444W (4.4 μm; rest-frame H) band. We find SFRs of galaxies with log(M */M ⊙) > 9.5 that are lower than found in many earlier studies by up to 0.6 dex, but in good agreement with recent results obtained with the Prospector fitting framework. The difference (log(SFR(Paα)-SFR(Prospector)) is ‑0.09 ± 0.04 dex at 1010‑11 M ⊙. We also measure the empirical relation between Paschen-α luminosity and rest-frame H-band magnitude and find that the scatter is only 0.04 dex lower than that of the SFR–M* relation and is much lower than the systematic differences among relations in the literature due to various methods of converting observed measurements to physical properties. We additionally identify examples of sources—that, with standard cutoffs via the UVJ diagram, would be deemed quiescent—with significant (log(sSFR)> ‑11 yr‑1), typically extended, Paschen-α emission. Our results may be indicative of the potential unification of methods used to derive the SFS with careful selection of star-forming galaxies and independent SFR and stellar mass indicators.</p>
-                    <p><a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.2162N/abstract" target="_blank">NASA ADS Link</a></p>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.2162N/abstract" class="ads-button" target="_blank">ADS</a>
-                </div>
-            </li>
+    <h2>First / Co-First Author Papers</h2>
+    <ul class="publications-list" id="first-author-list"></ul>
 
+    <h2>Nth-Author Papers</h2>
+    <ul class="publications-list" id="nth-author-list"></ul>
+  </main>
 
-        </ul>
-    </main>
-
-    <footer>
-        <p>
-            <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
-            <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
-            <a href="mailto:chloe.neufeld@yale.edu">Email</a>
-        </p>
-    </footer>
+  <footer>
+    <p>
+      <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+      <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+      <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+    </p>
+  </footer>
 </body>
 </html>
