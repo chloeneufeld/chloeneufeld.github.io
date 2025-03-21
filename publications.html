@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications | Chloe Neufeld</title>
   <link rel="stylesheet" href="styles.css">
+
   <script>
     function toggleAbstract(id, button) {
       const element = document.getElementById(id);
@@ -16,27 +17,25 @@
         button.textContent = "More";
       }
     }
-
+  
     function formatAuthors(authors) {
-        return authors
-            .map(name => {
-            const nameLower = name.toLowerCase();
-            const [last, first] = name.split(',').map(s => s.trim());
-            const formattedName = first && last ? `${first} ${last}` : name;
-
-            const fullLower = formattedName.toLowerCase();
-            if (
-                fullLower.includes("neufeld c") ||
-                fullLower.includes("chloe neufeld") ||
-                fullLower.includes("neufeld chloe")
-            ) {
-                return `<strong>${formattedName}</strong>`;
-            }
-            return formattedName;
-            })
-            .join(", ");
+      return authors.map(name => {
+        const [last, first] = name.split(',').map(s => s.trim());
+        const formattedName = first && last ? `${first} ${last}` : name;
+        const lower = formattedName.toLowerCase();
+        if (
+          lower.includes("neufeld c") ||
+          lower.includes("chloe neufeld") ||
+          lower.includes("neufeld chloe") ||
+          lower.includes("c. neufeld") ||
+          lower.includes("c neufeld")
+        ) {
+          return `<strong>${formattedName}</strong>`;
         }
-
+        return formattedName;
+      }).join(", ");
+    }
+  
     function createPaperHTML(paper, index) {
       return `
         <li class="publication-item">
@@ -51,25 +50,62 @@
         </li>
       `;
     }
-
+  
+    function getAuthorRank(authors) {
+      for (let i = 0; i < Math.min(authors.length, 10); i++) {
+        const name = authors[i].toLowerCase();
+        if (name.includes("neufeld") || name.includes("chloe")) {
+          return i + 1;
+        }
+      }
+      return 99;
+    }
+  
+    function renderPublications(papers, containerId, filterTopThree) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+  
+      // Combine, sort, group by year
+      const sorted = papers.sort((a, b) => b.year - a.year);
+      const grouped = {};
+  
+      sorted.forEach(paper => {
+        const rank = getAuthorRank(paper.authors);
+        if (filterTopThree && rank > 3) return;
+  
+        if (!grouped[paper.year]) grouped[paper.year] = [];
+        grouped[paper.year].push(paper);
+      });
+  
+      Object.keys(grouped).sort((a, b) => b - a).forEach(year => {
+        container.innerHTML += `<h3 class="year-heading">${year}</h3><hr class="year-divider">`;
+        grouped[year].forEach((paper, i) => {
+          const id = `${year}_${i}`;
+          container.innerHTML += createPaperHTML(paper, id);
+        });
+      });
+    }
+  
     async function loadPublications() {
       const res = await fetch("publications.json");
       const data = await res.json();
-
-      const firstList = document.getElementById("first-author-list");
-      const nthList = document.getElementById("nth-author-list");
-
-      data.first_author.forEach((paper, i) => {
-        firstList.innerHTML += createPaperHTML(paper, `fa${i}`);
-      });
-
-      data.nth_author.forEach((paper, i) => {
-        nthList.innerHTML += createPaperHTML(paper, `na${i}`);
-      });
+  
+      const allPubs = [...data.first_author, ...data.nth_author];
+      const checkbox = document.getElementById("filter-checkbox");
+  
+      const applyFilter = () => {
+        const filter = checkbox.checked;
+        renderPublications(allPubs, "all-publications", filter);
+      };
+  
+      checkbox.addEventListener("change", applyFilter);
+      applyFilter();
     }
-
+  
     window.onload = loadPublications;
   </script>
+  
+
 </head>
 <body>
   <header>
@@ -88,14 +124,12 @@
   <main class="publications-section">
     <h1>Publications</h1>
     <p><i><a href="https://ui.adsabs.harvard.edu/public-libraries/JrWTBTT0R_OM1UiDMzSQ7w">full list of publications here</a></i></p>
-
-    <h2>First / Co-First Author Papers</h2>
-    <ul class="publications-list" id="first-author-list"></ul>
-
-    <h2>Nth-Author Papers</h2>
-    <ul class="publications-list" id="nth-author-list"></ul>
+  
+    <label><input type="checkbox" id="filter-checkbox"> Only 1st–3rd Author</label>
+  
+    <ul class="publications-list" id="all-publications"></ul>
   </main>
-
+  
   <footer>
     <p>
       <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
