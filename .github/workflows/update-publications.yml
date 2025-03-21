@@ -3,6 +3,9 @@ name: Update Publications from ADS
 on:
   workflow_dispatch:  # manual trigger only
 
+permissions:
+  contents: write
+
 jobs:
   fetch-ads-data:
     runs-on: ubuntu-latest
