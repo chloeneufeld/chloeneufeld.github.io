@@ -1,13 +1,16 @@
 /* Keep the rest of the site in Courier New */
-body {
+html, body {
+    height: 100%;
     font-family: "Courier New", Courier, monospace;
     text-align: center;
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* ensures header doesn't overlap content */
+    padding-top: 100px; /* match or exceed your header height */
+    padding-bottom: 100px; /* ensures content isn’t cut off */
     background-color: #E6E6FA; /* pastel lavender */
     color: #555555;
     padding-top: 60px; /* Adjust this based on header height */
+    overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 /* Apply Times font to headers */
@@ -90,11 +93,13 @@ h1 {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 10px;
     width: 100%;
     font-size: 0.9em;
+    text-align: center;
+    padding: 15px 0;
+    background: transparent;
 }
+
 
 footer a {
     text-decoration: none;
@@ -117,12 +122,13 @@ footer a {
     max-width: 800px;
     margin: 120px auto 60px auto; /* centers and gives room for header/footer */
     padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.9); /* white box */
+    background: rgba(255, 255, 255, 0.95); /* white box */
     border-radius: 12px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     text-align: left;
-    overflow: hidden;
+    overflow: visible; /* allow full content to show */
 }
+
 
 h2 {
     margin-top: 20px;
