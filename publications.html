@@ -21,14 +21,18 @@
         return authors
             .map(name => {
             const nameLower = name.toLowerCase();
+            const [last, first] = name.split(',').map(s => s.trim());
+            const formattedName = first && last ? `${first} ${last}` : name;
+
+            const fullLower = formattedName.toLowerCase();
             if (
-                nameLower.includes("neufeld, c") ||
-                nameLower.includes("chloe neufeld") ||
-                nameLower.includes("neufeld, chloe")
+                fullLower.includes("neufeld c") ||
+                fullLower.includes("chloe neufeld") ||
+                fullLower.includes("neufeld chloe")
             ) {
-                return `<strong>${name}</strong>`;
+                return `<strong>${formattedName}</strong>`;
             }
-            return name;
+            return formattedName;
             })
             .join(", ");
         }
