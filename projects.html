@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Chloe Neufeld</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+        <nav>
+            <ul>
+                <li><a href="/about.html">~/about</a></li>
+                <li><a href="/publications.html">~/publications</a></li>
+                <li><a href="/projects.html">~/projects</a></li>
+                <li><a href="/community.html">~/community</a></li>
+                <li><a href="/cv.html">~/cv</a></li>
+            </ul>
+            <div id="theme-toggle" class="theme-toggle">🌙</div>
+        </nav>
+    </header>
+
+    <main class="projects-section">
+        <h1>Research Highlights</h1>
+
+        <div class="project-card">
+            <h2>CAMELS: Feedback Effects in the Warm–Hot CGM</h2>
+            <img src="projects/assets/camels.pdf" alt="CAMELS" style="width:100%;max-width:600px;" />
+            <p>
+                In this CAMELS-based study, we explored how different subgrid implementations of stellar and AGN feedback
+                affect baryonic redistribution in halos. We introduced a new metric—the closure radius—to compare feedback
+                effects and found that SIMBA feedback, while lower in total energy than IllustrisTNG, couples more efficiently
+                to baryons.
+            </p>
+            <p><a href="/projects/camels-feedback.html" class="read-more">Read more →</a></p>
+          </div>
+  
+        <div class="project-card">
+            <h2>FRESCO: The Paschen-α Star-forming Sequence at Cosmic Noon</h2>
+            <img src="projects/assets/fresco.pdf" alt="FRESCO" style="width:100%;max-width:600px;" />
+            <p>
+                Using JWST's NIRCam grism, we measured Paschen-α emission and rest-frame H-band magnitudes to study
+                the star-forming sequence at cosmic noon. Our results offer a cleaner, dust-insensitive view of how
+                galaxies build mass at z ~ 1.4 and highlight mismatches with traditional SFR estimation methods.
+            </p>
+            <p><a href="/projects/fresco-paa.html" class="read-more">Read more →</a></p>
+          </div>
+
+          <div class="project-card">
+            <h2>RELICS: Small Lensed z ≥ 5.5 Galaxies (2022)</h2>
+            <img src="projects/assets/relics.png" alt="RELICS galaxy sample figure" style="width:100%;max-width:600px;" />
+            <p>
+              This study presents high-redshift galaxies from the RELICS survey as potential Lyman continuum leakers.
+              By leveraging gravitational lensing and forward modeling, we found a population of compact, intensely
+              star-forming galaxies that could play a crucial role in cosmic reionization.
+            </p>
+            <p><a href="/projects/relics-galaxies.html" class="read-more">Read more →</a></p>
+          </div>
+  
+        
+      </main>
+        
+  <footer>
+    <p>
+        <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+        <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+        <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+    </p>
+</footer>
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+  
+</body>
+</html>

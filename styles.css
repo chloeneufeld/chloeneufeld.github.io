@@ -107,7 +107,7 @@ footer a {
 }
 
 .about-section {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 100px auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.8); /* Light overlay for readability */
@@ -118,7 +118,7 @@ footer a {
 
 /* Publications Page Styles */
 .publications-section {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 120px auto 60px auto; /* centers and gives room for header/footer */
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.95); /* white box */
@@ -127,7 +127,6 @@ footer a {
     text-align: left;
     overflow: visible; /* allow full content to show */
 }
-
 
 h2 {
     margin-top: 20px;
@@ -142,14 +141,6 @@ h2 {
 .publications-list li {
     margin-bottom: 10px;
     font-size: 1.1em;
-}
-
-.abstract-box {
-    margin-top: 10px;
-    padding: 10px;
-    background: rgba(230, 230, 250, 0.5); /* Light lavender */
-    border-left: 4px solid #555;
-    display: none;
 }
 
 /* Style for individual publication blocks */
@@ -195,11 +186,11 @@ h2 {
 
 
 a {
-    color: #6A5ACD; /* Slate Blue */
+    color: #333; /* Slate Blue */
     text-decoration: none; /* Removes underline */
 }
 a:hover {
-    color: #483D8B; /* Darker shade of blue */
+    color: #333; /* Darker shade of blue */
     text-decoration: underline;
 }
 a:visited {
@@ -237,3 +228,144 @@ a:visited {
     border-top: 1px solid #ccc;
     margin-bottom: 15px;
 }
+
+.cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E6E6FA;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+background-color: #b4b4de;
+}
+  
+
+
+/* Projects Page Styles */
+.projects-section {
+    max-width: 1000px;
+    margin: 120px auto 60px auto; /* centers and gives room for header/footer */
+    padding: 30px 20px;
+    text-align: left;
+    overflow: visible; /* allow full content to show */
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .project-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .project-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 6px;
+  }
+  
+  .caption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #6A5ACD;
+  }
+  
+  .project-detail {
+    max-width: 1000px;
+    margin: 120px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .cv-container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .cv-iframe {
+    width: 100%;
+    height: 1000px;
+    border: none;
+    margin-top: 20px;
+  }
+
+
+  /* Light theme (default) */
+body {
+    background-color: #E6E6FA;
+    color: #555555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark theme overrides */
+  body.dark {
+    background-color: #1f1f2e;
+    color: #e0e0e0;
+  }
+
+  body.dark header {
+    background-color: rgba(50, 50, 70, 0.9);
+    color: #e0e0e0;
+  }
+
+  
+  .content-section,
+  .project-card,
+  .publication-item {
+    background: rgba(255, 255, 255, 0.95);
+    color: inherit;
+  }
+  
+  body.dark .content-section,
+  body.dark .project-card,
+  body.dark .publication-item,
+  body.dark .publications-section,
+  body.dark .about-section,
+  body.dark .cv-container,
+  body.dark .project-detail {
+    background: rgba(50, 50, 70, 0.9);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  }
+  
+  a {
+    color: #e0e0e0;
+  }
+  body.dark a, 
+  body.dark .year-heading {
+    color: #e0e0e0;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  

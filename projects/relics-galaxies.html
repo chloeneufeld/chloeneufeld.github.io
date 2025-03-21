@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RELICS: Small Lensed z ≥ 5.5 Galaxies</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+    <nav>
+      <ul>
+        <li><a href="/about.html">~/about</a></li>
+        <li><a href="/publications.html">~/publications</a></li>
+        <li><a href="/projects.html">~/projects</a></li>
+        <li><a href="/community.html">~/community</a></li>
+        <li><a href="/cv.html">~/cv</a></li>
+      </ul>
+      <div id="theme-toggle" class="theme-toggle">🌙</div>
+
+    </nav>
+  </header>
+
+  <main class="project-detail">
+    <h1>RELICS: small lensed z ≥ 5.5 galaxies selected as potential Lyman continuum leakers</h1>
+    <p><strong>Paper:</strong> <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.2162N/abstract" target="_blank">MNRAS (2022)</a></p>
+
+    <p>
+      In this paper, we present size measurements of 78 high-redshift (z ≥ 5.5) galaxy candidates from the
+      <strong>Reionization Lensing Cluster Survey (RELICS)</strong>. These galaxies are magnified by foreground clusters and observed with
+      Hubble and Spitzer, enabling size and morphology analysis well beyond typical limits at these redshifts.
+    </p>
+
+    <img src="/assets/relics_figure.png" alt="RELICS figure" class="project-image" />
+    <p class="caption">Figure: A sample of compact z ≥ 5.5 galaxies from RELICS, lens-modeled and forward-fitted using LENSTRUCTION.</p>
+
+    <p>
+      We use the forward-modeling tool <strong>LENSTRUCTION</strong> to measure effective radii and combine this with public lens models
+      to estimate source-plane properties. The galaxies span a wide range in luminosity, but many exhibit very compact
+      sizes — with effective radii <em>Reff</em> &lt; 200 pc.
+    </p>
+
+    <p>
+      We identify a subset of galaxies with both compact morphology and high inferred star formation rate surface densities
+      (Σ<sub>SFR</sub> &gt; 10 M<sub>⊙</sub> yr<sup>−1</sup> kpc<sup>−2</sup>). These are strong candidates for Lyman continuum
+      escape and may play a crucial role in the reionization of the universe.
+    </p>
+
+    <p>
+      These sources are ideal targets for JWST spectroscopic follow-up to probe early star formation, feedback, and
+      reionization physics.
+    </p>
+
+    <a href="/projects.html" class="back-link">← Back to projects</a>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+      <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+      <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+    </p>
+  </footer>
+</body>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Load theme from localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  });
+</script>
+
+</html>

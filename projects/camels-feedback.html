@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CAMELS: Feedback Effects in the Warm–Hot CGM</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+    <nav>
+      <ul>
+        <li><a href="/about.html">~/about</a></li>
+        <li><a href="/publications.html">~/publications</a></li>
+        <li><a href="/projects.html">~/projects</a></li>
+        <li><a href="/community.html">~/community</a></li>
+        <li><a href="/cv.html">~/cv</a></li>
+      </ul>
+      <div id="theme-toggle" class="theme-toggle">🌙</div>
+
+    </nav>
+  </header>
+
+  <main class="project-detail">
+    <h1>Quantifying Baryonic Feedback on the Warm–Hot Circumgalactic Medium in CAMELS Simulations</h1>
+    <p><strong>Publication:</strong> <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980...61M/abstract" target="_blank">ApJ (2025)</a></p>
+
+    <p>
+      In this study, we use data from the <strong>CAMELS</strong> simulation suite to explore how different subgrid 
+      implementations of stellar and AGN feedback affect the distribution of baryons in and around halos. Our focus 
+      is on the warm–hot circumgalactic medium (CGM), a phase that encodes key signatures of galactic outflows.
+    </p>
+
+    <img src="/assets/camels_figure.png" alt="CAMELS feedback modes figure" class="project-image" />
+    <p class="caption">Figure 1. Halo baryon content across different CAMELS models, colored by feedback prescriptions. The vertical dashed line marks the closure radius.</p>
+
+    <p>
+      We introduce the concept of a <strong>closure radius</strong> — the radius at which the baryonic mass enclosed 
+      matches the halo’s expected cosmic baryon fraction. This metric captures how far feedback drives baryons into 
+      the CGM or beyond.
+    </p>
+
+    <p>
+      Interestingly, we find that <strong>SIMBA's feedback model</strong>, while injecting less total energy than 
+      IllustrisTNG, more effectively displaces gas beyond the halo boundary. This suggests SIMBA's coupling to the 
+      surrounding medium is more efficient.
+    </p>
+
+    <p>
+      Our results highlight the importance of feedback implementation details, and suggest new ways to observationally 
+      constrain them via CGM structure and scaling relations.
+    </p>
+
+    <a href="/projects.html" class="back-link">← Back to projects</a>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+      <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+      <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+    </p>
+  </footer>
+</body>
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+  
+</html>

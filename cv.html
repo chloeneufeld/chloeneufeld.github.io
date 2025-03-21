@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV | Chloe Neufeld</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+    <nav>
+      <ul>
+        <li><a href="/about.html">~/about</a></li>
+        <li><a href="/publications.html">~/publications</a></li>
+        <li><a href="/projects.html">~/projects</a></li>
+        <li><a href="/community.html">~/community</a></li>
+        <li><a href="/cv.html">~/cv</a></li>
+      </ul>
+      <div id="theme-toggle" class="theme-toggle">🌙</div>
+
+    </nav>
+  </header>
+
+  <main class="cv-container">
+    <h1>Curriculum Vitae</h1>
+    <p><i>If the embedded version doesn't load, you can <a href="/assets/neufeld_cv_02_2024.pdf" target="_blank">view it here</a>.</i></p>
+    <iframe class="cv-iframe" src="/assets/neufeld_cv_02_2024.pdf"></iframe>
+    <a href="/assets/neufeld_cv_02_2024.pdf" download class="cv-button">Download PDF</a>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+      <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+      <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+    </p>
+  </footer>
+</body>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Load theme from localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  });
+</script>
+
+</html>

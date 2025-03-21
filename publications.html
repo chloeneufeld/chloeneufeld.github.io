@@ -118,6 +118,8 @@
         <li><a href="/community.html">~/community</a></li>
         <li><a href="/cv.html">~/cv</a></li>
       </ul>
+      <div id="theme-toggle" class="theme-toggle">🌙</div>
+
     </nav>
   </header>
 
@@ -138,4 +140,22 @@
     </p>
   </footer>
 </body>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Load theme from localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  });
+</script>
+
 </html>
