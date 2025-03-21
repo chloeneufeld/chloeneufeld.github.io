@@ -137,24 +137,82 @@ h2 {
     font-size: 1.1em;
 }
 
-.more-btn {
-    background: #888;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 0.9em;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.more-btn:hover {
-    background: #555;
-}
-
 .abstract-box {
     margin-top: 10px;
     padding: 10px;
     background: rgba(230, 230, 250, 0.5); /* Light lavender */
     border-left: 4px solid #555;
     display: none;
+}
+
+/* Style for individual publication blocks */
+.publication-item {
+    background: rgba(230, 230, 250, 0.5); /* Light lavender block */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Centering and styling the "More" button */
+.more-btn {
+    background: #98989e;
+    color: #f5f5fc;
+    border: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 8px auto; /* Centers the button */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.more-btn:hover {
+    background: #727278;
+    text-decoration: none;
+}
+
+
+/* Abstract box inside each publication */
+.abstract-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Lighter block for abstracts */
+    border-left: 4px solid #6A5ACD;
+    display: none;
+    border-radius: 5px;
+    text-align: left;
+}
+
+
+a {
+    color: #6A5ACD; /* Slate Blue */
+    text-decoration: none; /* Removes underline */
+}
+a:hover {
+    color: #483D8B; /* Darker shade of blue */
+    text-decoration: underline;
+}
+a:visited {
+    color: #333; /* Medium Purple */
+}
+
+
+.ads-button {
+    display: inline-block;
+    background-color: #E6E6FA; /* Slate Blue */
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+}
+
+.ads-button:hover {
+    background-color: #b4b4de; /* Darker blue */
 }

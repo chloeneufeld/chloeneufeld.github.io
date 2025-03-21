@@ -1,0 +1,36 @@
+name: Update Publications from ADS
+
+on:
+  workflow_dispatch:  # manual trigger only
+
+jobs:
+  fetch-ads-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run fetch_ads.py
+        env:
+          ADS_API_TOKEN: ${{ secrets.ADS_API_TOKEN }}
+        run: |
+          python fetch_ads.py
+
+      - name: Commit and push publications.json
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add publications.json
+          git commit -m "Update publications.json from ADS" || echo "No changes to commit"
+          git push
