@@ -16,8 +16,9 @@
                 <li><a href="/projects.html">~/projects</a></li>
                 <li><a href="/community.html">~/community</a></li>
                 <li><a href="/cv.html">~/cv</a></li>
+                <li id="theme-toggle" class="theme-toggle">🌚</li>
+
             </ul>
-            <div id="theme-toggle" class="theme-toggle">🌙</div>
         </nav>
     </header>
 
@@ -28,11 +29,10 @@
             <h2>CAMELS: Feedback Effects in the Warm–Hot CGM</h2>
             <img src="projects/assets/camels.pdf" alt="CAMELS" style="width:100%;max-width:600px;" />
             <p>
-                In this CAMELS-based study, we explored how different subgrid implementations of stellar and AGN feedback
-                affect baryonic redistribution in halos. We introduced a new metric—the closure radius—to compare feedback
-                effects and found that SIMBA feedback, while lower in total energy than IllustrisTNG, couples more efficiently
-                to baryons.
-            </p>
+              In this study, we use data from the <strong><a href="https://camels.readthedocs.io/en/latest/">CAMELS</a></strong> simulation suite to explore how different subgrid 
+      implementations of stellar and AGN feedback affect the distribution of baryons in and around halos.
+              We find that SIMBA's feedback model, while injecting less total energy than IllustrisTNG, more effectively expels gas beyond the halo boundary, suggesting that SIMBA's coupling to the surrounding medium is more efficient.
+                    </p>
             <p><a href="/projects/camels-feedback.html" class="read-more">Read more →</a></p>
           </div>
   
@@ -40,14 +40,16 @@
             <h2>FRESCO: The Paschen-α Star-forming Sequence at Cosmic Noon</h2>
             <img src="projects/assets/fresco.pdf" alt="FRESCO" style="width:100%;max-width:600px;" />
             <p>
-                Using JWST's NIRCam grism, we measured Paschen-α emission and rest-frame H-band magnitudes to study
-                the star-forming sequence at cosmic noon. Our results offer a cleaner, dust-insensitive view of how
-                galaxies build mass at z ~ 1.4 and highlight mismatches with traditional SFR estimation methods.
+              This work presents early results from the JWST First Reionization Epoch Spectroscopically Complete Observations 
+              (<strong>FRESCO</strong>) survey, focusing on galaxy star formation at 1.0 &lt; z &lt; 1.7. Using the 
+              <strong>Paschen-α emission line</strong>, which is less sensitive to dust than Hα or UV indicators, and rest-frame H-band magnitudes, we study the 
+              star-forming sequence at cosmic noon. Our results offer a cleaner, less dust-sensitive view of how
+              galaxies build up their mass at z ~ 1.4.
             </p>
             <p><a href="/projects/fresco-paa.html" class="read-more">Read more →</a></p>
           </div>
 
-          <div class="project-card">
+          <!-- <div class="project-card">
             <h2>RELICS: Small Lensed z ≥ 5.5 Galaxies (2022)</h2>
             <img src="projects/assets/relics.png" alt="RELICS galaxy sample figure" style="width:100%;max-width:600px;" />
             <p>
@@ -56,7 +58,7 @@
               star-forming galaxies that could play a crucial role in cosmic reionization.
             </p>
             <p><a href="/projects/relics-galaxies.html" class="read-more">Read more →</a></p>
-          </div>
+          </div> -->
   
         
       </main>
@@ -75,16 +77,16 @@
     // Load theme from localStorage
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
-      toggle.textContent = '☀️';
+      toggle.textContent = '🌝';
     }
   
     toggle.addEventListener('click', () => {
       body.classList.toggle('dark');
       const theme = body.classList.contains('dark') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
-      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
     });
   </script>
-  
+    
 </body>
 </html>

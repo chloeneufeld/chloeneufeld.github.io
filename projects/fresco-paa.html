@@ -16,8 +16,9 @@
         <li><a href="/projects.html">~/projects</a></li>
         <li><a href="/community.html">~/community</a></li>
         <li><a href="/cv.html">~/cv</a></li>
+        <li id="theme-toggle" class="theme-toggle">🌚</li>
+
       </ul>
-      <div id="theme-toggle" class="theme-toggle">🌙</div>
 
     </nav>
   </header>
@@ -29,25 +30,32 @@
     <p>
       This work presents early results from the JWST First Reionization Epoch Spectroscopically Complete Observations 
       (<strong>FRESCO</strong>) survey, focusing on galaxy star formation at 1.0 &lt; z &lt; 1.7. Using the 
-      <strong>Paschen-α emission line</strong>, which is less sensitive to dust than Hα or UV indicators, we study the 
-      star-forming sequence with unprecedented clarity.
+      Paschen-α emission line, which is less sensitive to dust than Hα or UV indicators, and rest-frame H-band magnitudes, we study the 
+      star-forming sequence at cosmic noon. Our results offer a cleaner, less dust-sensitive view of how
+      galaxies build up their mass at z ~ 1.4.
+    </p>
+    <p>      
+      The star forming sequence of galaxies - the relation between star formation rate (SFR) and stellar mass - is an informative probe of galaxy evolution, with implications for how galaxies build up their mass and eventually quench. 
+      Long wavelength hydrogen recombination lines in the rest-frame near infrared (NIR), such as Paschen-alpha, are nearly dust-insensitive tracers of SFR that can now, for the first time with JWST, be explored at cosmic noon. 
     </p>
 
-    <img src="/assets/fresco_figure.png" alt="FRESCO SFR-M* relation figure" class="project-image" />
-    <p class="caption">Figure 1. Paschen-α derived star formation rates vs. stellar mass at z ~ 1.4. Colored points indicate galaxy morphology and dust content.</p>
 
+    <img src="/projects/assets/fresco.pdf" alt="FRESCO SFR-M* relation figure" class="project-image" />
+    <p class="caption">Figure 1. SFR, derived from Paα emission-line measurements, plotted against stellar mass, derived from EAZY SED fitting. Galaxies in our sample are shown as either star-forming (blue points) or quenched (red points), defined using the UVJ diagram.
+      Spatially resolved Paschen-semission-line maps are shown for a selection of galaxies in our sample, with their locations relative to the distribution of data. For each galaxy, the left panel shows the RGB image, constructed by combining the F182M, F210M, and F444W bands, and the right panel shows the emission-line map with 1" scaling shown. 
+    </p>
     <p>
+      Using the clean, model-independent measure of the observed relation between Paschen-alpha luminosity, which traces SFR, and rest-frame NIR magnitude, which tracers stellar mass, we compare the slope and scatter in the star forming sequence to previous studies that use other methods to infer the relation. 
+
       The resulting SFR–M<sub>*</sub> relation appears shallower than previous estimates based on dustier indicators, 
-      aligning more closely with predictions from <strong>Prospector</strong> fits. This may suggest that conventional 
+      aligning more closely with predictions from Prospector SED fits. This may suggest that conventional 
       star formation rate estimates at cosmic noon are systematically biased high.
     </p>
 
     <p>
-      We also find that some galaxies classified as quiescent via rest-frame colors show significant Paschen-α emission, 
+      We also investigate the information contained in the emission line maps produced by grism spectroscopy. These line maps allow us to see where Paschen-alpha emission - and thus star formation - is present in these galaxies, allowing for spatially resolved investigations into galaxy quenching and dust obscured star formation.
+      We find that some galaxies classified as quiescent via rest-frame colors show significant Paschen-α emission, 
       indicating ongoing star formation and challenging standard color-based selection techniques.
-    </p>
-
-    <p>
       This work demonstrates the value of direct JWST grism spectroscopy for reconstructing a cleaner picture of galaxy 
       growth during the peak of star formation in the universe.
     </p>
@@ -70,15 +78,15 @@
     // Load theme from localStorage
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
-      toggle.textContent = '☀️';
+      toggle.textContent = '🌝';
     }
   
     toggle.addEventListener('click', () => {
       body.classList.toggle('dark');
       const theme = body.classList.contains('dark') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
-      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
     });
   </script>
-  
+    
 </html>

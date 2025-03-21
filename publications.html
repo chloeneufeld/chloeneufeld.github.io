@@ -117,8 +117,9 @@
         <li><a href="/projects.html">~/projects</a></li>
         <li><a href="/community.html">~/community</a></li>
         <li><a href="/cv.html">~/cv</a></li>
+        <li id="theme-toggle" class="theme-toggle">🌚</li>
+
       </ul>
-      <div id="theme-toggle" class="theme-toggle">🌙</div>
 
     </nav>
   </header>
@@ -127,7 +128,7 @@
     <h1>Publications</h1>
     <p><i><a href="https://ui.adsabs.harvard.edu/public-libraries/JrWTBTT0R_OM1UiDMzSQ7w">full list of publications here</a></i></p>
   
-    <label><input type="checkbox" id="filter-checkbox"> Only 1st–3rd Author</label>
+    <label><input type="checkbox" id="filter-checkbox"> 1st–3rd author only</label>
   
     <ul class="publications-list" id="all-publications"></ul>
   </main>
@@ -147,14 +148,14 @@
   // Load theme from localStorage
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
-    toggle.textContent = '☀️';
+    toggle.textContent = '🌝';
   }
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     const theme = body.classList.contains('dark') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
-    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
   });
 </script>
 

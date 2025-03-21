@@ -16,9 +16,9 @@
         <li><a href="/projects.html">~/projects</a></li>
         <li><a href="/community.html">~/community</a></li>
         <li><a href="/cv.html">~/cv</a></li>
-      </ul>
-      <div id="theme-toggle" class="theme-toggle">🌙</div>
+        <li id="theme-toggle" class="theme-toggle">🌚</li>
 
+      </ul>
     </nav>
   </header>
 
@@ -44,14 +44,14 @@
   // Load theme from localStorage
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
-    toggle.textContent = '☀️';
+    toggle.textContent = '🌝';
   }
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     const theme = body.classList.contains('dark') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
-    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
   });
 </script>
 

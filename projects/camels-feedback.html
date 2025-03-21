@@ -16,8 +16,9 @@
         <li><a href="/projects.html">~/projects</a></li>
         <li><a href="/community.html">~/community</a></li>
         <li><a href="/cv.html">~/cv</a></li>
+        <li id="theme-toggle" class="theme-toggle">🌚</li>
+
       </ul>
-      <div id="theme-toggle" class="theme-toggle">🌙</div>
 
     </nav>
   </header>
@@ -27,29 +28,42 @@
     <p><strong>Publication:</strong> <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980...61M/abstract" target="_blank">ApJ (2025)</a></p>
 
     <p>
-      In this study, we use data from the <strong>CAMELS</strong> simulation suite to explore how different subgrid 
-      implementations of stellar and AGN feedback affect the distribution of baryons in and around halos. Our focus 
-      is on the warm–hot circumgalactic medium (CGM), a phase that encodes key signatures of galactic outflows.
-    </p>
-
-    <img src="/assets/camels_figure.png" alt="CAMELS feedback modes figure" class="project-image" />
-    <p class="caption">Figure 1. Halo baryon content across different CAMELS models, colored by feedback prescriptions. The vertical dashed line marks the closure radius.</p>
-
-    <p>
-      We introduce the concept of a <strong>closure radius</strong> — the radius at which the baryonic mass enclosed 
-      matches the halo’s expected cosmic baryon fraction. This metric captures how far feedback drives baryons into 
-      the CGM or beyond.
+      In this study, we use data from the <strong><a href="https://camels.readthedocs.io/en/latest/">CAMELS</a></strong> simulation suite to explore how different subgrid 
+      implementations of stellar and AGN feedback affect the distribution of baryons in and around halos.
+      We find that SIMBA's feedback model, while injecting less total energy than IllustrisTNG, more effectively expels gas beyond the halo boundary, suggesting that SIMBA's coupling to the surrounding medium is more efficient.
     </p>
 
     <p>
-      Interestingly, we find that <strong>SIMBA's feedback model</strong>, while injecting less total energy than 
-      IllustrisTNG, more effectively displaces gas beyond the halo boundary. This suggests SIMBA's coupling to the 
-      surrounding medium is more efficient.
+      The baryonic physics shaping galaxy formation and evolution is complex, spanning a vast range of scales, and is thus challenging to model. 
+      Cosmological simulations rely on subgrid models of these processes that result in significantly different predictions. 
+      It is essential that we understand how models of stellar and active galactic nuclei (AGN) feedback impact the behavior of baryons as a function of halo mass and redshift. 
+      This paper presents results on the effect of parameters that govern the subgrid implementation of stellar and AGN feedback modes in the SIMBA and IllustrisTNG suites of the Cosmology and Astrophysics with MachinE Learning Simulations (CAMELS). 
+      Specifically, we focus on the  A_SN1, A_SN2, A_AGN1, and A_AGN2 parameters, which affect mass loading and speed of winds, accretion rates, and energy and momentum flux of stellar and AGN feedback.
+      We explore how the subgrid implementation differences between the two suites affect the pure cumulative feedback energetics and the baryon distribution around halos, using the circumgalactic medium (CGM) gas fraction and closure radius (the radius at which the baryonic mass enclosed 
+      matches the total cosmic baryon fraction) as key metrics.
     </p>
 
+    <img src="/projects/assets/camels.pdf" alt="CAMELS total feedback and fcgm figure" class="project-image" />
+    <img src="/projects/assets/camels2.pdf" alt="CAMELS closure radius figure" class="project-image" />
+    <p class="caption">Figure 1. Total cumulative feedback energy (top row), CGM gas fraction (middle row), and closure radius (bottom row) as functions of halo mass at z = 0, with IllustrisTNG simulations in green and SIMBA simulations in purple. 
+      From left to right, we vary ASN 1, ASN 2, AAGN 1, and AAGN 2, where the fiducial model is indicated with a solid line, and the minimum and maximum values of the parameter space sampled in CAMELS are indicated with a dashed line and a dotted line, respectively. 
+      Of the four parameters, ASN 1 is the most efficient at modulating the cumulative feedback energy and fCGM. While IllustrisTNG has overall higher cumulative energy, we find that the closure radius for SIMBA runs is significantly greater than that of IllustrisTNG runs, due to the more efficient depletion of baryons from the CGM in SIMBA.
+    </p>
+
+
+    <!-- <img src="/projects/assets/camels3.pdf" alt="CAMELS feedback modes figure" class="project-image" />
+    <p class="caption">Figure 2. Closure radius as a function of halo mass at z = 0; IllustrisTNG simulations are in green and SIMBA simulations are in purple. 
+      From left to right, we vary ASN 1, ASN 2, AAGN 1, and AAGN 2. 68th percentiles are shown as the shaded regions around the running medians. 
+      The closure radius for SIMBA runs is significantly greater than that of IllustrisTNG runs, due to the more efficient depletion of baryons from the CGM in SIMBA.
+    </p> -->
+
+
     <p>
-      Our results highlight the importance of feedback implementation details, and suggest new ways to observationally 
-      constrain them via CGM structure and scaling relations.
+      Interestingly, we find that SIMBA's feedback model, while injecting less cumulative energy than 
+      IllustrisTNG, more effectively displaces gas beyond a galaxy's halo. This suggests that SIMBA's baryonic coupling to the 
+      surrounding medium is more efficient. Our results highlight the importance of feedback implementation details 
+      and also provides evidence that stellar and AGN feedback modes are highly coupled in these subgrid models, with stellar feedback efficiency having a large effect on black hole growth and the activation of AGN feedback.
+
     </p>
 
     <a href="/projects.html" class="back-link">← Back to projects</a>
@@ -70,15 +84,15 @@
     // Load theme from localStorage
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
-      toggle.textContent = '☀️';
+      toggle.textContent = '🌝';
     }
   
     toggle.addEventListener('click', () => {
       body.classList.toggle('dark');
       const theme = body.classList.contains('dark') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
-      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
     });
   </script>
-  
+    
 </html>
