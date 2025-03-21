@@ -11,7 +11,7 @@ ADS_API_URL = f"https://api.adsabs.harvard.edu/v1/biblib/libraries/{LIBRARY_ID}"
 SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
 
 # Your name as it appears in ADS (used to detect first authorship)
-YOUR_NAME = "Neufeld, C"
+YOUR_NAME = "Neufeld"
 
 
 def get_bibcodes():
@@ -33,7 +33,14 @@ def fetch_paper_data(bibcodes):
 
 
 def is_first_author(authors):
-    return authors and authors[0].startswith("Neufeld")
+    if not authors:
+        return False
+    first = authors[0].lower().replace(".", "").strip()
+    return (
+        "neufeld, c" in first or
+        "chloe neufeld" in first or
+        "neufeld, chloe" in first
+    )
 
 
 def main():

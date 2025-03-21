@@ -18,8 +18,20 @@
     }
 
     function formatAuthors(authors) {
-      return authors.map(a => a.includes("Neufeld") ? `<strong>${a}</strong>` : a).join(", ");
-    }
+        return authors
+            .map(name => {
+            const nameLower = name.toLowerCase();
+            if (
+                nameLower.includes("neufeld, c") ||
+                nameLower.includes("chloe neufeld") ||
+                nameLower.includes("neufeld, chloe")
+            ) {
+                return `<strong>${name}</strong>`;
+            }
+            return name;
+            })
+            .join(", ");
+        }
 
     function createPaperHTML(paper, index) {
       return `
@@ -30,7 +42,6 @@
           <button class="more-btn" onclick="toggleAbstract('abstract${index}', this)">More</button>
           <div class="abstract-box" id="abstract${index}" style="display: none;">
             <p><strong>Abstract:</strong> ${paper.abstract}</p>
-            <p><a href="https://ui.adsabs.harvard.edu/abs/${paper.bibcode}" target="_blank">NASA ADS Link</a></p>
             <a href="https://ui.adsabs.harvard.edu/abs/${paper.bibcode}" class="ads-button" target="_blank">ADS</a>
           </div>
         </li>
