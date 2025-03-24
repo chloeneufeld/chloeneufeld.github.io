@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Chloe Neufeld</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/">chloeneufeld@github.io</a></div>
+        <nav>
+            <ul>
+                <li><a href="/about.html">about</a></li>
+                <li><a href="/publications.html">publications</a></li>
+                <li><a href="/projects.html">projects</a></li>
+                <li><a href="/community.html">community</a></li>
+                <li><a href="/cv.html">cv</a></li>
+                        <li id="theme-toggle" class="theme-toggle">🌚</li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="about-section">
+        <h1>Community</h1>
+
+        <h2>
+            Mentoring & Outreach
+        </h2>
+
+        <p>
+            <a href="https://ciencia.yale.edu/programs/seeds-success">Seeds of Success - New Haven</a>
+        </p>
+        <p>
+            <a href="https://astronomy.yale.edu/academics/undergraduate-program/astro-sibs-undergraduate-mentorship-program">Yale Astro Sibs Program</a>            
+        </p>
+
+        <p>
+            <a href="https://www.aotnewhaven.org/index.html">Astronomy on Tap - New Haven</a>
+        </p>
+
+        <h2>
+            Service
+        </h2>
+        <p>
+            <a href="https://astronomy.yale.edu/about/astronomy-student-council">Yale Astronomy Student Council</a>            
+        </p>
+        <p>
+            <a href="https://yalegalaxylunch.github.io">Yale Galaxy Lunch</a>
+        </p>
+
+
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://github.com/chloeneufeld" target="_blank">GitHub</a> |
+            <a href="https://bsky.app/profile/chloeneufeld.bsky.social" target="_blank">Bluesky</a> |
+            <a href="mailto:chloe.neufeld@yale.edu">Email</a>
+        </p>
+    </footer>
+</body>
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '🌝';
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      toggle.textContent = theme === 'dark' ? '🌝' : '🌚';
+    });
+  </script>
+    
+</html>
