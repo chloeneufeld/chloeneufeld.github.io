@@ -25,7 +25,7 @@
         "Weibel, Andrea",
         "Xiao, Mengyuan"
       ],
-      "abstract": "We present results from the JWST First Reionization Epoch Spectroscopically Complete Observations survey on the star-forming sequence (SFS) of galaxies at 1.0 &lt; z &lt; 1.7, around the peak of the cosmic star formation history. Star formation rates (SFRs) are measured from the redshifted, relatively dust-insensitive Paschen-\u03b1 emission line, and stellar mass measurements include the F444W (4.4 \u03bcm; rest-frame H) band. We find SFRs of galaxies with log(M <SUB>*</SUB>/M <SUB>\u2299</SUB>) &gt; 9.5 that are lower than found in many earlier studies by up to 0.6 dex, but in good agreement with recent results obtained with the Prospector fitting framework. The difference (log(SFR(Pa\u03b1)-SFR(Prospector)) is \u20110.09 \u00b1 0.04 dex at 10<SUP>10\u201111</SUP> M <SUB>\u2299</SUB>. We also measure the empirical relation between Paschen-\u03b1 luminosity and rest-frame H-band magnitude and find that the scatter is only 0.04 dex lower than that of the SFR\u2013M* relation and is much lower than the systematic differences among relations in the literature due to various methods of converting observed measurements to physical properties. We additionally identify examples of sources\u2014that, with standard cutoffs via the UVJ diagram, would be deemed quiescent\u2014with significant (log(sSFR)&gt; \u201111 yr<SUP>\u20111</SUP>), typically extended, Paschen-\u03b1 emission. Our results may be indicative of the potential unification of methods used to derive the SFS with careful selection of star-forming galaxies and independent SFR and stellar mass indicators.",
+      "abstract": "We present results from the JWST First Reionization Epoch Spectroscopically Complete Observations survey on the star-forming sequence (SFS) of galaxies at 1.0 &lt; z &lt; 1.7, around the peak of the cosmic star formation history. Star formation rates (SFRs) are measured from the redshifted, relatively dust-insensitive Paschen-\u03b1 emission line, and stellar mass measurements include the F444W (4.4 \u03bcm; rest-frame H) band. We find SFRs of galaxies with log(M <SUB>*</SUB>/M <SUB>\u2299</SUB>) &gt; 9.5 that are lower than found in many earlier studies by up to 0.6 dex, but in good agreement with recent results obtained with the Prospector fitting framework. The difference (log(SFR(Pa\u03b1)-SFR(Prospector)) is \u22120.09 \u00b1 0.04 dex at 10<SUP>10\u221211</SUP> M <SUB>\u2299</SUB>. We also measure the empirical relation between Paschen-\u03b1 luminosity and rest-frame H-band magnitude and find that the scatter is only 0.04 dex lower than that of the SFR\u2500M* relation and is much lower than the systematic differences among relations in the literature due to various methods of converting observed measurements to physical properties. We additionally identify examples of sources\u2014that, with standard cutoffs via the UVJ diagram, would be deemed quiescent\u2014with significant (log(sSFR)&gt; \u221211 yr<SUP>\u22121</SUP>), typically extended, Paschen-\u03b1 emission. Our results may be indicative of the potential unification of methods used to derive the SFS with careful selection of star-forming galaxies and independent SFR and stellar mass indicators.",
       "bibcode": "2024ApJ...972..156N"
     },
     {
@@ -99,6 +99,23 @@
       "bibcode": "2023MNRAS.525.2864O"
     },
     {
+      "title": "Quantifying Baryonic Feedback on the Warm\u2500Hot Circumgalactic Medium in CAMELS Simulations",
+      "year": "2025",
+      "authors": [
+        "Medlock, Isabel",
+        "Neufeld, Chloe",
+        "Nagai, Daisuke",
+        "Angl\u00e9s-Alc\u00e1zar, Daniel",
+        "Genel, Shy",
+        "Oppenheimer, Benjamin D.",
+        "Sims, Xavier",
+        "Singh, Priyanka",
+        "Villaescusa-Navarro, Francisco"
+      ],
+      "abstract": "The baryonic physics shaping galaxy formation and evolution are complex, spanning a vast range of scales and making them challenging to model. Cosmological simulations rely on subgrid models that produce significantly different predictions. Understanding how models of stellar and active galactic nucleus (AGN) feedback affect baryon behavior across different halo masses and redshifts is essential. Using the SIMBA and IllustrisTNG suites from the Cosmology and Astrophysics with MachinE Learning Simulations (CAMELS) project, we explore the effect of parameters governing the subgrid implementation of stellar and AGN feedback. We find that while IllustrisTNG shows higher cumulative feedback energy across all halos, SIMBA demonstrates a greater spread of baryons, quantified by the closure radius and circumgalactic medium (CGM) gas fraction. This suggests that feedback in SIMBA couples more effectively to baryons and drives them more efficiently within the host halo. There is evidence that the different feedback modes are highly interrelated in these subgrid models. The parameters controlling the stellar feedback efficiency significantly impact AGN feedback, as seen in the suppression of black hole mass growth and delayed activation of AGN feedback to higher-mass halos with increasing stellar feedback efficiency in both simulations. Additionally, the AGN feedback efficiency parameters affect the CGM gas fraction at low halo masses in SIMBA, hinting at complex, nonlinear interactions between the AGN and supernova feedback modes. Overall, we demonstrate that stellar and AGN feedback are intimately interwoven, especially at low redshift, due to subgrid implementation, resulting in halo property effects that might initially seem counterintuitive.",
+      "bibcode": "2025ApJ...980...61M"
+    },
+    {
       "title": "The Bullseye: HST, Keck/KCWI, and Dragonfly Characterization of a Giant Nine-ringed Galaxy",
       "year": "2025",
       "authors": [
@@ -115,21 +132,50 @@
       "bibcode": "2025ApJ...980L...3P"
     },
     {
-      "title": "Quantifying Baryonic Feedback on the Warm\u2013Hot Circumgalactic Medium in CAMELS Simulations",
-      "year": "2025",
+      "title": "A JWST Pa\u03b1 Calibration of the Radio Luminosity\u2500Star Formation Rate Relation at z \u223c 1.3",
+      "year": "2026",
       "authors": [
-        "Medlock, Isabel",
+        "Seymour, Nick",
+        "Hale, Catherine",
+        "Whittam, Imogen",
+        "Oesch, Pascal",
+        "Covelo-Paz, Alba",
+        "Wuyts, Stijn",
+        "Afonso, J.",
+        "Bowler, R. A. A.",
+        "Grundy, Joe Arthur",
+        "Jaiswar, Ravi",
+        "Jarvis, Matt",
+        "Matthews, Allison",
+        "Meyer, Romain A.",
         "Neufeld, Chloe",
-        "Nagai, Daisuke",
-        "Angl\u00e9s-Alc\u00e1zar, Daniel",
-        "Genel, Shy",
-        "Oppenheimer, Benjamin D.",
-        "Sims, Xavier",
-        "Singh, Priyanka",
-        "Villaescusa-Navarro, Francisco"
+        "Reddy, Naveen A.",
+        "Shivaei, Irene",
+        "Smith, Dan",
+        "Varadaraj, Rohan",
+        "Wozniak, Michael A.",
+        "Jung, Lyla"
       ],
-      "abstract": "The baryonic physics shaping galaxy formation and evolution are complex, spanning a vast range of scales and making them challenging to model. Cosmological simulations rely on subgrid models that produce significantly different predictions. Understanding how models of stellar and active galactic nucleus (AGN) feedback affect baryon behavior across different halo masses and redshifts is essential. Using the SIMBA and IllustrisTNG suites from the Cosmology and Astrophysics with MachinE Learning Simulations (CAMELS) project, we explore the effect of parameters governing the subgrid implementation of stellar and AGN feedback. We find that while IllustrisTNG shows higher cumulative feedback energy across all halos, SIMBA demonstrates a greater spread of baryons, quantified by the closure radius and circumgalactic medium (CGM) gas fraction. This suggests that feedback in SIMBA couples more effectively to baryons and drives them more efficiently within the host halo. There is evidence that the different feedback modes are highly interrelated in these subgrid models. The parameters controlling the stellar feedback efficiency significantly impact AGN feedback, as seen in the suppression of black hole mass growth and delayed activation of AGN feedback to higher-mass halos with increasing stellar feedback efficiency in both simulations. Additionally, the AGN feedback efficiency parameters affect the CGM gas fraction at low halo masses in SIMBA, hinting at complex, nonlinear interactions between the AGN and supernova feedback modes. Overall, we demonstrate that stellar and AGN feedback are intimately interwoven, especially at low redshift, due to subgrid implementation, resulting in halo property effects that might initially seem counterintuitive.",
-      "bibcode": "2025ApJ...980...61M"
+      "abstract": "As radio emission from normal galaxies is a dust-free tracer of star formation, tracing the star formation history of the Universe is a key goal of the Square Kilometre Array and the Next-Generation Very Large Array. In order to investigate how well radio luminosity traces star formation rate (SFR) in the early Universe, we have examined the radio properties of a JWST Pa\u03b1 sample of galaxies at 1.0 \u2272 z \u2272 1.8. In the GOODS-S field, we cross-matched a sample of 506 FRESCO Pa\u03b1 emitters with the 1.23 GHz radio continuum data from the MeerKAT MIGHTEE survey, finding 47 detections. After filtering for active galactic nuclei (via X-ray detections, hot mid-infrared dust, and extended radio emission), as well as blended sources, we obtained a sample of star-forming galaxies comprising 11 cataloged radio detections, 18 noncataloged detections (at \u224d3\u03c3\u25005\u03c3), and 298 undetected sources. Stacking the 298 undetected sources, we obtain a 3.3\u03c3 detection in the radio. This sample, along with a local sample of Pa\u03b1 emitters, lies along previous radio luminosity/SFR relations from local (&lt;0.2) to high redshift (z \u223c 1). Fitting the FRESCO data at 1.0 \u2272 z \u2272 1.8, we find <inline-formula> <mml:math><mml:mi>log</mml:mi><mml:mo>(</mml:mo><mml:msub><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>.</mml:mo><mml:mi>4GHz</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo><mml:mspace></mml:mspace><mml:mo>=</mml:mo></mml:math> </inline-formula> (1.31 \u00b1 0.17) \u00d7 <inline-formula> <mml:math><mml:mspace></mml:mspace><mml:mi>log</mml:mi><mml:mo>(</mml:mo><mml:msub><mml:mrow><mml:mi>SFR</mml:mi></mml:mrow><mml:mrow><mml:mi>Pa</mml:mi><mml:mi>\u03b1</mml:mi></mml:mrow></mml:msub><mml:mo>)</mml:mo><mml:mspace></mml:mspace><mml:mo>+</mml:mo></mml:math> </inline-formula> (21.36 \u00b1 0.17), which is consistent with other literature relations. We can explain some of the observed scatter in the L<SUB>1.4GHz</SUB>/SFR<SUB>Pa\u03b1</SUB> correlation by a toy model in which the synchrotron emission is a delayed/averaged tracer of the instantaneous Pa\u03b1 SFR by \u223c10/75 Myr.",
+      "bibcode": "2026ApJ...998..306S"
+    },
+    {
+      "title": "FRESCO: Constraining Dust Attenuation and Star-Formation Rates of $z\\sim 2$ Star-Forming Galaxies with JWST Paschen and Ground-Based Balmer Emission Line Observations",
+      "year": "2026",
+      "authors": [
+        "Wozniak, Michael A.",
+        "Reddy, Naveen A.",
+        "Oesch, Pascal A.",
+        "Kramarenko, Ivan",
+        "Matthee, Jorryt",
+        "Neufeld, Chloe",
+        "Shivaei, Irene",
+        "Mobasher, Bahram",
+        "Shapley, Alice E.",
+        "Siana, Brian"
+      ],
+      "abstract": "We present new constraints on dust attenuation and star-formation rates (SFRs) for 77 galaxies at redshifts $z=1.43-2.65$, using Paschen emission line detections from the JWST FRESCO survey and ground-based Balmer line measurements from the MOSDEF survey. Using nebular and continuum emission maps, we find that Paschen emission covers a smaller area than continuum emission observed in the F210M (2.1 $\u03bc$m; rest-frame optical) and F444W (4.4 $\u03bc$m; rest-frame near-IR) bands, and is preferentially located toward galaxy outskirts. These results suggest that current star formation is concentrated in regions farther from galaxy centers than older stellar populations traced by the continuum, indicative of inside-out star formation. With a careful accounting of slit-loss corrections for ground-based measurements, we calculate nebular reddening and dust-corrected SFRs using the Balmer decrement (H$\u03b1$/H$\u03b2$) and Paschen-to-Balmer line ratios (Pa$\u03b1$/H$\u03b1$ and Pa$\u03b2$/H$\u03b1$), assuming the Milky Way extinction curve. On average, Paschen-derived reddening and SFRs agree with Balmer-derived values; however, two galaxies exhibit significantly higher Paschen reddening and four show significantly higher Paschen SFRs. We find that non-unity dust covering fractions bias the Balmer decrement toward less reddened OB associations, while decrements involving the Paschen lines are less affected by this bias. These results highlight the enhanced sensitivity of the Paschen lines to the most heavily obscured OB associations in $z\\sim2$ galaxies, particularly in galaxies with patchy dust geometries. Future studies using Paschen lines exclusively to measure nebular reddening will yield more robust constraints on the dustiest star-forming regions.",
+      "bibcode": "2026arXiv260221329W"
     },
     {
       "title": "RELICS: Properties of z \u2265 5.5 Galaxies Inferred from Spitzer and Hubble Imaging, Including A Candidate z \u223c 6.8 Strong [O III] emitter",
@@ -165,7 +211,7 @@
         "Umetsu, Keiichi",
         "Vulcani, Benedetta"
       ],
-      "abstract": "We present constraints on the physical properties (including stellar mass, age, and star formation rate) of 207 6 \u2272 z \u2272 8 galaxy candidates from the Reionization Lensing Cluster Survey (RELICS) and Spitzer-RELICS surveys. We measure photometry using T-PHOT and perform spectral energy distribution fitting using EAzY and BAGPIPES. Of the 207 candidates for which we could successfully measure (or place limits on) Spitzer fluxes, 23 were demoted to likely z &lt; 4. Among the high-z candidates, we find intrinsic stellar masses between 1 \u00d7 10<SUP>6</SUP>M<SUB>\u2299</SUB> and 4 \u00d7 10<SUP>9</SUP>M<SUB>\u2299</SUB>, and rest-frame UV absolute magnitudes between -22.6 and -14.5 mag. While our sample is mostly comprised of ${L}_{m\\mathrm{UV}}/{L}_{m\\mathrm{UV}}^{* }\\lt 1$ &lt;!-- --&gt; galaxies, it extends to ${L}_{m\\mathrm{UV}}/{L}_{m\\mathrm{UV}}^{* }\\sim 2$ &lt;!-- --&gt; . Our sample spans \u223c4 orders of magnitude in stellar mass and star formation rates, and exhibits ages that range from maximally young to maximally old. We highlight 11 z \u2265 6.5 galaxies with detections in Spitzer/IRAC imaging, several of which show evidence for some combination of evolved stellar populations, large contributions of nebular emission lines, and/or dust. Among these is PLCKG287+32-2013, one of the brightest z \u223c 7 candidates known (AB mag 24.9 at 1.6 \u03bcm) with a Spitzer 3.6 \u03bcm flux excess suggesting strong [O III] + H-\u03b2 emission (\u223c1000 \u00c5 rest-frame equivalent width). We discuss the possible uses and limits of our sample and present a public catalog of Hubble + Spitzer photometry along with physical property estimates for all objects in the sample. Because of their apparent brightnesses, high redshifts, and variety of stellar populations, these objects are excellent targets for follow-up with the James Webb Space Telescope.",
+      "abstract": "We present constraints on the physical properties (including stellar mass, age, and star formation rate) of 207 6 \u2272 z \u2272 8 galaxy candidates from the Reionization Lensing Cluster Survey (RELICS) and Spitzer-RELICS surveys. We measure photometry using T-PHOT and perform spectral energy distribution fitting using EAzY and BAGPIPES. Of the 207 candidates for which we could successfully measure (or place limits on) Spitzer fluxes, 23 were demoted to likely z &lt; 4. Among the high-z candidates, we find intrinsic stellar masses between 1 \u00d7 10<SUP>6</SUP>M<SUB>\u2609</SUB> and 4 \u00d7 10<SUP>9</SUP>M<SUB>\u2609</SUB>, and rest-frame UV absolute magnitudes between -22.6 and -14.5 mag. While our sample is mostly comprised of ${L}_{m\\mathrm{UV}}/{L}_{m\\mathrm{UV}}^{* }\\lt 1$ &lt;!-- --&gt; galaxies, it extends to ${L}_{m\\mathrm{UV}}/{L}_{m\\mathrm{UV}}^{* }\\sim 2$ &lt;!-- --&gt; . Our sample spans \u223c4 orders of magnitude in stellar mass and star formation rates, and exhibits ages that range from maximally young to maximally old. We highlight 11 z \u2265 6.5 galaxies with detections in Spitzer/IRAC imaging, several of which show evidence for some combination of evolved stellar populations, large contributions of nebular emission lines, and/or dust. Among these is PLCKG287+32-2013, one of the brightest z \u223c 7 candidates known (AB mag 24.9 at 1.6 \u03bcm) with a Spitzer 3.6 \u03bcm flux excess suggesting strong [O III] + H-\u03b2 emission (\u223c1000 \u00c5 rest-frame equivalent width). We discuss the possible uses and limits of our sample and present a public catalog of Hubble + Spitzer photometry along with physical property estimates for all objects in the sample. Because of their apparent brightnesses, high redshifts, and variety of stellar populations, these objects are excellent targets for follow-up with the James Webb Space Telescope.",
       "bibcode": "2021ApJ...910..135S"
     }
   ]
